@@ -1,0 +1,24 @@
+service: valmaggiacom-screenshot
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  memorySize: 2048
+  timeout: 60 # API Gateway is limited to 30 seconds
+  region: ${opt:region, 'us-west-2'}
+  stage: ${opt:stage, 'qa'}
+  logRetentionInDays: 5
+  versionFunctions: false
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - SES:SendRawEmail
+        - SES:SendEmail
+      Resource: '*'
+
+functions:
+  take-screenshot:
+    handler: take-screenshot.handler
+    events:
+      - schedule: cron(00 11 * * ? *)
+      - schedule: cron(00 23 * * ? *)

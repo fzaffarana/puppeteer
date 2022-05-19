@@ -1,0 +1,25 @@
+{
+  "name": "valmaggiacom-screenshot",
+  "scripts": {
+    "lint": "eslint . --ignore-path .gitignore --ignore-pattern internals/scripts",
+    "lint-fix": "eslint . --fix --ignore-path .gitignore --ignore-pattern internals/scripts"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "prettier": "^2.1.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.966.0",
+    "chrome-aws-lambda": "^10.1.0",
+    "dayjs": "^1.10.6",
+    "nodemailer": "^6.6.3",
+    "puppeteer-core": "^10.2.0"
+  }
+}
